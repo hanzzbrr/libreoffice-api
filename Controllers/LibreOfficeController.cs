@@ -8,10 +8,10 @@ namespace LibreOfficeApi.Controllers;
 public class LibreOfficeController : ControllerBase
 {
     [HttpGet(Name = "ConvertPdf")]
-    public object Get(string filePath, string targetPath)
+    public object Get()
     {
         DocumentConverter converter = new DocumentConverter();
-        converter.ConvertToPdf(filePath, targetPath);
+        converter.ConvertToPdf("input.docx", "target.pdf");
         return "converted";
     }
 }
